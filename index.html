@@ -1,25 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aadi EV Hub | EV Scooters in Firozabad</title>
+<title>Aadi EV Hub | Best EV Scooter Shop in Firozabad</title>
 
-<!-- SEO -->
-<meta name="description" content="Buy Ola electric scooters in Firozabad at Aadi EV Hub. Best price & service.">
+<meta name="description" content="Buy Ola electric scooters in Firozabad at Aadi EV Hub. Best price, EMI, fast delivery.">
 
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXX');
+</script>
 
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {margin:0;font-family:sans-serif;background:#0b0f1a;color:white;}
-nav {padding:15px;background:#111;}
-.section {padding:40px;}
-.card {background:#1a1a1a;padding:20px;margin:10px;border-radius:10px;}
-.btn {padding:10px 20px;background:#00ffcc;border:none;border-radius:20px;}
-.whatsapp {position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%;}
+body {
+  margin:0;
+  font-family:Poppins;
+  background:#05070d;
+  color:white;
+  scroll-behavior:smooth;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  width:100%;
+  padding:15px 30px;
+  backdrop-filter:blur(20px);
+  background:rgba(255,255,255,0.05);
+}
+
+/* HERO */
+.hero {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1 {
+  font-size:3rem;
+  background:linear-gradient(to right,#00ffcc,#00aaff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* BUTTON */
+.btn {
+  padding:12px 25px;
+  border-radius:30px;
+  margin:10px;
+  border:none;
+  cursor:pointer;
+}
+
+.primary {background:#00ffcc;color:black;}
+.secondary {background:#25D366;}
+
+/* SECTION */
+.section {
+  padding:80px 20px;
+  text-align:center;
+}
+
+/* GLASS */
+.card {
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(20px);
+  border-radius:20px;
+  padding:20px;
+  transition:0.4s;
+}
+.card:hover {
+  transform:translateY(-10px) scale(1.05);
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* IMAGE */
+img {
+  width:100%;
+  border-radius:15px;
+}
+
+/* FLOAT */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
+}
+
+.call {
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#007bff;
+  padding:15px;
+  border-radius:50%;
+}
 </style>
 </head>
 
@@ -30,73 +126,86 @@ nav {padding:15px;background:#111;}
 </nav>
 
 <!-- HERO -->
-<div class="section">
-<h1>Ola Electric Scooters</h1>
+<section class="hero">
+<h1>Electric Scooters in Firozabad ⚡</h1>
+<p>Best Price | EMI | Fast Delivery</p>
 
-<model-viewer 
-src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
-auto-rotate camera-controls style="width:100%;height:300px;">
-</model-viewer>
+<button class="btn primary" onclick="scrollToForm()">Book Test Ride</button>
+<a href="tel:+91XXXXXXXXXX"><button class="btn secondary">Call Now</button></a>
+</section>
 
+<!-- TRUST -->
+<section class="section">
+<h2>Why Choose Us</h2>
+<p>✔ 500+ Customers</p>
+<p>✔ Best Price Guarantee</p>
+<p>✔ Easy Finance</p>
+<p>✔ Service Support</p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section">
+<h2>Ola Scooters</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/131825/ola-s1-pro.jpeg">
+<h3>Ola S1 Pro</h3>
+<p>Range: 181km</p>
+<p>₹1,30,000</p>
 </div>
 
-<!-- SCOOTERS -->
-<div class="section">
-<h2>Available Scooters</h2>
-<div id="scooters"></div>
+<div class="card">
+<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/131825/ola-s1-air.jpeg">
+<h3>Ola S1 Air</h3>
+<p>Range: 125km</p>
+<p>₹1,05,000</p>
 </div>
 
-<!-- BOOKING -->
-<div class="section">
+</div>
+</section>
+
+<!-- OFFER -->
+<section class="section">
+<h2>🔥 Limited Offer</h2>
+<p>₹2000 Discount + Free Helmet</p>
+</section>
+
+<!-- FORM -->
+<section class="section" id="form">
 <h2>Book Test Ride</h2>
 
 <input id="name" placeholder="Your Name"><br><br>
 <input id="phone" placeholder="Phone"><br><br>
 
-<button class="btn" onclick="bookNow()">Book via WhatsApp</button>
-</div>
+<button class="btn primary" onclick="book()">Book on WhatsApp</button>
+</section>
 
 <!-- MAP -->
-<div class="section">
+<section class="section">
 <iframe 
 src="https://www.google.com/maps?q=Kotla Rd, near Ahilyabai Murti, Firozabad&output=embed"
 width="100%" height="250">
 </iframe>
-</div>
+</section>
 
+<!-- FLOAT -->
 <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-
-<script src="firebase.js"></script>
+<a class="call" href="tel:+91XXXXXXXXXX">📞</a>
 
 <script>
+function scrollToForm(){
+  document.getElementById("form").scrollIntoView({behavior:'smooth'});
+}
 
-/* LOAD SCOOTERS */
-db.collection("scooters").get().then(data=>{
-  data.forEach(doc=>{
-    let s = doc.data();
-    document.getElementById("scooters").innerHTML += `
-      <div class="card">
-        <h3>${s.name}</h3>
-        <p>₹${s.price}</p>
-        <p>${s.desc}</p>
-      </div>
-    `;
-  });
-});
-
-/* BOOKING + WHATSAPP */
-function bookNow(){
+function book(){
   let name = document.getElementById("name").value;
   let phone = document.getElementById("phone").value;
 
-  db.collection("leads").add({
-    name, phone
-  });
-
-  let msg = `Hello Aadi EV Hub, I want test ride. Name: ${name}, Phone: ${phone}`;
+  let msg = `Hello, I want test ride. Name: ${name}, Phone: ${phone}`;
   window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(msg)}`);
 }
-
 </script>
 
 </body>
