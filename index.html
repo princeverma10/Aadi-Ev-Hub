@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Aadi EV Hub | EV Scooters in Firozabad</title>
+
+<!-- SEO -->
+<meta name="description" content="Buy Ola electric scooters in Firozabad at Aadi EV Hub. Best price & service.">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<style>
+body {margin:0;font-family:sans-serif;background:#0b0f1a;color:white;}
+nav {padding:15px;background:#111;}
+.section {padding:40px;}
+.card {background:#1a1a1a;padding:20px;margin:10px;border-radius:10px;}
+.btn {padding:10px 20px;background:#00ffcc;border:none;border-radius:20px;}
+.whatsapp {position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%;}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Aadi EV Hub ⚡</h2>
+</nav>
+
+<!-- HERO -->
+<div class="section">
+<h1>Ola Electric Scooters</h1>
+
+<model-viewer 
+src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+auto-rotate camera-controls style="width:100%;height:300px;">
+</model-viewer>
+
+</div>
+
+<!-- SCOOTERS -->
+<div class="section">
+<h2>Available Scooters</h2>
+<div id="scooters"></div>
+</div>
+
+<!-- BOOKING -->
+<div class="section">
+<h2>Book Test Ride</h2>
+
+<input id="name" placeholder="Your Name"><br><br>
+<input id="phone" placeholder="Phone"><br><br>
+
+<button class="btn" onclick="bookNow()">Book via WhatsApp</button>
+</div>
+
+<!-- MAP -->
+<div class="section">
+<iframe 
+src="https://www.google.com/maps?q=Kotla Rd, near Ahilyabai Murti, Firozabad&output=embed"
+width="100%" height="250">
+</iframe>
+</div>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
+
+<script src="firebase.js"></script>
+
+<script>
+
+/* LOAD SCOOTERS */
+db.collection("scooters").get().then(data=>{
+  data.forEach(doc=>{
+    let s = doc.data();
+    document.getElementById("scooters").innerHTML += `
+      <div class="card">
+        <h3>${s.name}</h3>
+        <p>₹${s.price}</p>
+        <p>${s.desc}</p>
+      </div>
+    `;
+  });
+});
+
+/* BOOKING + WHATSAPP */
+function bookNow(){
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+
+  db.collection("leads").add({
+    name, phone
+  });
+
+  let msg = `Hello Aadi EV Hub, I want test ride. Name: ${name}, Phone: ${phone}`;
+  window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(msg)}`);
+}
+
+</script>
+
+</body>
+</html>
