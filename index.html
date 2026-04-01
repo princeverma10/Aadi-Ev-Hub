@@ -3,207 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aadi EV Hub | Premium Electric Mobility Firozabad</title>
 
-<title>Aadi EV Hub | Best EV Scooter Shop in Firozabad</title>
-
-<meta name="description" content="Buy Ola electric scooters in Firozabad at Aadi EV Hub. Best price, EMI, fast delivery.">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXX');
-</script>
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <style>
+:root {
+  --neon-green: #00ffcc;
+  --electric-blue: #00aaff;
+  --bg-dark: #080a12;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
 body {
-  margin:0;
-  font-family:Poppins;
-  background:#05070d;
-  color:white;
-  scroll-behavior:smooth;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-dark);
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* NAV */
+/* --- NAVIGATION --- */
 nav {
-  position:fixed;
-  width:100%;
-  padding:15px 30px;
-  backdrop-filter:blur(20px);
-  background:rgba(255,255,255,0.05);
+  position: fixed;
+  top: 0; width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  background: rgba(8, 10, 18, 0.8);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-/* HERO */
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+.logo span { color: var(--neon-green); }
+
+/* --- HERO SECTION --- */
 .hero {
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1a2238 0%, #080a12 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .hero h1 {
-  font-size:3rem;
-  background:linear-gradient(to right,#00ffcc,#00aaff);
-  -webkit-background-clip:text;
-  color:transparent;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin-bottom: 10px;
+  background: linear-gradient(to bottom, #fff 30%, var(--electric-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* BUTTON */
-.btn {
-  padding:12px 25px;
-  border-radius:30px;
-  margin:10px;
-  border:none;
-  cursor:pointer;
+.hero p { opacity: 0.7; font-size: 1.2rem; max-width: 600px; }
+
+/* --- CALCULATOR SECTION (NEW) --- */
+.tool-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
 }
 
-.primary {background:#00ffcc;color:black;}
-.secondary {background:#25D366;}
-
-/* SECTION */
-.section {
-  padding:80px 20px;
-  text-align:center;
+.tool-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  padding: 30px;
+  border-radius: 24px;
+  text-align: left;
 }
 
-/* GLASS */
-.card {
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(20px);
-  border-radius:20px;
-  padding:20px;
-  transition:0.4s;
-}
-.card:hover {
-  transform:translateY(-10px) scale(1.05);
-}
+input[type=range] { width: 100%; accent-color: var(--neon-green); }
 
-/* GRID */
+/* --- PRODUCT CARDS --- */
 .grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 40px 5%;
 }
 
-/* IMAGE */
-img {
-  width:100%;
-  border-radius:15px;
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
 }
 
-/* FLOAT */
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:15px;
-  border-radius:50%;
+.product-card:hover { border-color: var(--neon-green); transform: translateY(-5px); }
+
+.badge {
+  position: absolute;
+  top: 15px; left: 15px;
+  background: var(--neon-green);
+  color: black;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 
-.call {
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  background:#007bff;
-  padding:15px;
-  border-radius:50%;
+.product-info { padding: 25px; }
+
+/* --- BUTTONS --- */
+.btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
 }
+
+.primary { background: var(--neon-green); color: #000; box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2); }
+.primary:hover { transform: scale(1.05); background: #fff; }
+
+/* --- FLOATING ACTIONS --- */
+.fab-container { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+.fab { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 50px; }
 </style>
 </head>
-
 <body>
 
 <nav>
-<h2>Aadi EV Hub ⚡</h2>
+  <div class="logo">AADI<span>EV</span> HUB</div>
+  <button class="btn primary" style="padding: 10px 20px;" onclick="scrollToForm()">Book Test Ride</button>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-<h1>Electric Scooters in Firozabad ⚡</h1>
-<p>Best Price | EMI | Fast Delivery</p>
-
-<button class="btn primary" onclick="scrollToForm()">Book Test Ride</button>
-<a href="tel:+91XXXXXXXXXX"><button class="btn secondary">Call Now</button></a>
+  <div class="badge">EST. 2026</div>
+  <h1>The Future is <br>Firozabad.</h1>
+  <p>Experience the silence and power of Ola Electric. Visit Aadi EV Hub for the best deals in Uttar Pradesh.</p>
+  <div style="margin-top: 30px;">
+    <a href="#products" class="btn primary">View Inventory</a>
+    <a href="tel:+91XXXXXXXXXX" class="btn" style="color: white; border: 1px solid var(--glass-border); margin-left: 10px;">Contact Sales</a>
+  </div>
 </section>
 
-<!-- TRUST -->
-<section class="section">
-<h2>Why Choose Us</h2>
-<p>✔ 500+ Customers</p>
-<p>✔ Best Price Guarantee</p>
-<p>✔ Easy Finance</p>
-<p>✔ Service Support</p>
+<section class="section" style="padding: 100px 5%;">
+  <h2 class="section-title">Smart Tools</h2>
+  <div class="tool-container">
+    <div class="tool-card">
+      <h3>⚡ Real-World Range</h3>
+      <p>Select your average speed:</p>
+      <input type="range" id="speedRange" min="20" max="80" value="40" oninput="updateRange()">
+      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <span>20 km/h</span>
+        <span id="speedVal" style="color:var(--neon-green); font-weight:bold;">40 km/h</span>
+        <span>80 km/h</span>
+      </div>
+      <h2 id="finalRange" style="margin-top: 20px; color: var(--electric-blue);">181 KM</h2>
+      <small style="opacity:0.5">*Based on Ola S1 Pro ideal conditions</small>
+    </div>
+
+    <div class="tool-card">
+      <h3>💰 Monthly Savings</h3>
+      <p>Daily Commute (km):</p>
+      <input type="range" id="kmRange" min="5" max="100" value="30" oninput="updateSavings()">
+      <p id="kmVal">30 km per day</p>
+      <h2 id="savingsVal" style="color: var(--neon-green);">Save ₹2,400/mo</h2>
+      <small style="opacity:0.5">Compared to petrol @ ₹105/L</small>
+    </div>
+  </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="section">
-<h2>Ola Scooters</h2>
+<section id="products" style="padding-bottom: 100px;">
+  <h2 class="section-title">Our Lineup</h2>
+  <div class="grid">
+    <div class="product-card">
+      <div class="badge">TOP SELLER</div>
+      <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/131825/ola-s1-pro.jpeg" alt="Ola S1 Pro">
+      <div class="product-info">
+        <h3>Ola S1 Pro (Gen 2)</h3>
+        <p style="color:var(--neon-green)">195 KM Certified Range</p>
+        <div style="display:flex; justify-content: space-between; align-items:center; margin-top: 20px;">
+          <span style="font-size: 1.5rem; font-weight:700;">₹1,29,999</span>
+          <button class="btn primary" style="padding: 8px 15px;" onclick="scrollToForm()">Reserve</button>
+        </div>
+      </div>
+    </div>
 
-<div class="grid">
+    <div class="product-card">
+      <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/131825/ola-s1-air.jpeg" alt="Ola S1 Air">
+      <div class="product-info">
+        <h3>Ola S1 Air</h3>
+        <p style="color:var(--neon-green)">151 KM Certified Range</p>
+        <div style="display:flex; justify-content: space-between; align-items:center; margin-top: 20px;">
+          <span style="font-size: 1.5rem; font-weight:700;">₹1,04,999</span>
+          <button class="btn primary" style="padding: 8px 15px;" onclick="scrollToForm()">Reserve</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="card">
-<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/131825/ola-s1-pro.jpeg">
-<h3>Ola S1 Pro</h3>
-<p>Range: 181km</p>
-<p>₹1,30,000</p>
+<section id="form" style="padding: 100px 5%; background: rgba(255,255,255,0.02);">
+  <div style="max-width: 600px; margin: 0 auto; text-align: center;" class="tool-card">
+    <h2>Book Your Test Ride</h2>
+    <p>Experience the torque. Our team will contact you within 2 hours.</p>
+    <input type="text" id="name" placeholder="Full Name" style="width:100%; padding: 15px; border-radius: 10px; border: 1px solid var(--glass-border); background: #000; color: white; margin-bottom: 15px; box-sizing: border-box;">
+    <input type="text" id="phone" placeholder="Mobile Number" style="width:100%; padding: 15px; border-radius: 10px; border: 1px solid var(--glass-border); background: #000; color: white; margin-bottom: 20px; box-sizing: border-box;">
+    <button class="btn primary" style="width:100%" onclick="book()">Confirm via WhatsApp</button>
+  </div>
+</section>
+
+<div class="fab-container">
+  <a href="tel:+91XXXXXXXXXX" class="fab" style="background: #007bff;">📞</a>
+  <a href="https://wa.me/91XXXXXXXXXX" class="fab" style="background: #25D366;">💬</a>
 </div>
-
-<div class="card">
-<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/131825/ola-s1-air.jpeg">
-<h3>Ola S1 Air</h3>
-<p>Range: 125km</p>
-<p>₹1,05,000</p>
-</div>
-
-</div>
-</section>
-
-<!-- OFFER -->
-<section class="section">
-<h2>🔥 Limited Offer</h2>
-<p>₹2000 Discount + Free Helmet</p>
-</section>
-
-<!-- FORM -->
-<section class="section" id="form">
-<h2>Book Test Ride</h2>
-
-<input id="name" placeholder="Your Name"><br><br>
-<input id="phone" placeholder="Phone"><br><br>
-
-<button class="btn primary" onclick="book()">Book on WhatsApp</button>
-</section>
-
-<!-- MAP -->
-<section class="section">
-<iframe 
-src="https://www.google.com/maps?q=Kotla Rd, near Ahilyabai Murti, Firozabad&output=embed"
-width="100%" height="250">
-</iframe>
-</section>
-
-<!-- FLOAT -->
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-<a class="call" href="tel:+91XXXXXXXXXX">📞</a>
 
 <script>
-function scrollToForm(){
-  document.getElementById("form").scrollIntoView({behavior:'smooth'});
+function scrollToForm() {
+  document.getElementById("form").scrollIntoView({behavior: 'smooth'});
 }
 
-function book(){
+function updateRange() {
+  let speed = document.getElementById("speedRange").value;
+  document.getElementById("speedVal").innerText = speed + " km/h";
+  
+  // Simple logic: High speed = Lower range
+  let baseRange = 195;
+  let finalRange = baseRange - (speed * 1.2);
+  document.getElementById("finalRange").innerText = Math.round(finalRange) + " KM";
+}
+
+function updateSavings() {
+  let kms = document.getElementById("kmRange").value;
+  document.getElementById("kmVal").innerText = kms + " km per day";
+  
+  // Calculation: Petrol @ 2.5/km, EV @ 0.20/km
+  let petrolCost = kms * 2.5 * 30;
+  let evCost = kms * 0.20 * 30;
+  let savings = petrolCost - evCost;
+  document.getElementById("savingsVal").innerText = "Save ₹" + Math.round(savings).toLocaleString() + "/mo";
+}
+
+function book() {
   let name = document.getElementById("name").value;
   let phone = document.getElementById("phone").value;
-
-  let msg = `Hello, I want test ride. Name: ${name}, Phone: ${phone}`;
+  if(!name || !phone) { alert("Please enter details"); return; }
+  
+  let msg = `Hello Aadi EV Hub, I want to book a Test Ride.\nName: ${name}\nPhone: ${phone}`;
   window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(msg)}`);
 }
 </script>
